@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Digital Vibe Softwear</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
       margin: 0;
@@ -50,6 +51,12 @@
 
     nav a:hover {
       color: #ff3c6f;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
     }
 
     section {
@@ -103,6 +110,9 @@
       margin: 1rem 0;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
       transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .app-card:hover {
@@ -121,6 +131,20 @@
       color: #ff3c6f;
     }
 
+    .app-image {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-top: 1rem;
+    }
+
+    .about-card {
+      background: #1c1c1c;
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
     footer {
       text-align: center;
       padding: 2rem;
@@ -132,7 +156,7 @@
 
     @media (max-width: 768px) {
       nav {
-        display: flex;
+        display: none;
         flex-direction: column;
         align-items: flex-end;
       }
@@ -141,9 +165,18 @@
         margin: 0.5rem 0;
       }
 
+      .menu-toggle {
+        display: block;
+        color: #fff;
+      }
+
       header {
         flex-direction: column;
         align-items: flex-start;
+      }
+
+      nav.active {
+        display: flex;
       }
     }
 
@@ -154,6 +187,7 @@
 
   <header>
     <h1>DIGITAL VIBE</h1>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
     <nav>
       <a href="#home">Home</a>
       <a href="#services">Services</a>
@@ -184,33 +218,56 @@
     <div class="app-card">
       <div class="app-title">vibeMatch</div>
       <div class="app-status">Coming Soon</div>
+      <img src="https://via.placeholder.com/350x200/000000/ffffff?text=vibeMatch+App" alt="vibeMatch App"
+        class="app-image">
     </div>
     <div class="app-card">
       <div class="app-title">Fitness AI</div>
       <div class="app-status">Coming Soon</div>
+      <img src="https://via.placeholder.com/350x200/000000/ffffff?text=Fitness+AI+App" alt="Fitness AI App"
+        class="app-image">
     </div>
   </section>
 
   <section id="about">
     <h2>About Us</h2>
-    <p>Digital Vibe Softwear is led by passionate creators and developers focused on building unique experiences. </p>
-    <p><strong>Co-Founder:</strong> Andre Manookian</p>
+    <div class="about-card">
+      <p>Digital Vibe Softwear is a forward-thinking company led by a talented team of developers, designers, and
+        innovators. We are passionate about creating cutting-edge mobile apps and digital products that not only meet
+        user needs but also exceed expectations.</p>
+      <p><strong>Co-Founder:</strong> Andre Manookian</p>
+      <p>With a strong focus on simplicity, usability, and design, we aim to deliver experiences that feel intuitive and
+        seamlessly integrated into users' lives. Whether it's building apps from the ground up or collaborating with
+        clients on bespoke solutions, we bring creativity, dedication, and expertise to every project.</p>
+      <p>Our mission is to help individuals and businesses thrive in the ever-evolving digital landscape by providing
+        high-quality software solutions. We believe in the power of innovation to change the world for the better, one
+        app at a time.</p>
+    </div>
   </section>
 
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>Email: <a href="digitalvibe81@gmail.com" style="color:#fff;">digitalvibe81@gmail.com</a></p>
+    <p>Email: <a href="mailto:digitalvibe81@gmail.com" style="color:#fff;">digitalvibe81@gmail.com</a></p>
     <div class="social">
       <p>Follow us:</p>
-      <a href="https://www.instagram.com/digitalvibe.am/" target="_blank">Instagram</a>
-      <a href="https://www.linkedin.com/in/digital-vibe-0509bb363/" target="_blank">LinkedIn</a>
-      <a href="https://www.facebook.com/profile.php?id=61575095464999" target="_blank">Facebook</a>
+      <a href="https://www.instagram.com/digitalvibe.am/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+      <a href="https://www.linkedin.com/in/digital-vibe-0509bb363/" target="_blank"><i class="fab fa-linkedin"></i>
+        LinkedIn</a>
+      <a href="https://www.facebook.com/profile.php?id=61575095464999" target="_blank"><i class="fab fa-facebook"></i>
+        Facebook</a>
     </div>
   </section>
 
   <footer>
     <p>© 2025 Digital Vibe Softwear. All rights reserved.</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('nav');
+      nav.classList.toggle('active');
+    }
+  </script>
 
 </body>
 
